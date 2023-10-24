@@ -3,6 +3,8 @@ def encode(password):
 	encoded_pass = ''
 	for char in password:
 		encoded_val = int(char) + 3
+		if encoded_val >= 10:
+			encoded_val %= 10
 		encoded_pass += str(encoded_val)
 	return encoded_pass
 
@@ -19,7 +21,7 @@ if __name__ == "__main__":
 
 		if choice == '1':
 			user_pass = input('Please enter your password to encode:')
-			encrypted_pass = encoder(user_pass)
+			encrypted_pass = encode(user_pass)
 		elif choice == '2':
 			pass
 		elif choice == '3':
