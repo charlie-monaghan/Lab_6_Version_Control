@@ -22,21 +22,22 @@ def decode(password):
 
 if __name__ == "__main__":
 	while True:
+		print()
 		print('Menu')
 		print('-------------')
 		print('1. Encode')
 		print('2. Decode')
 		print('3. Quit')
 		print()
-		print('Please enter an option: ')
-		choice = input()
+		choice = input("Please enter an option: ")
 
 		if choice == '1':
 			user_pass = input('Please enter your password to encode:')
 			encrypted_pass = encode(user_pass)
 			print("Your password has been encoded and stored!")
 		elif choice == '2':
-			pass
+			decrypted_pass = decode(encrypted_pass)
+                        print(f"The encoded password is {encrypted_pass}, and the original is {decrypted_pass}.")
 		elif choice == '3':
 			break
 		else:
